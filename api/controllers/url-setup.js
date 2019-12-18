@@ -39,3 +39,4 @@ function setUpQuery(websites) {
 
 module.exports.getWebUrl = getWebUrl;
 module.exports.setUpQuery = setUpQuery;
+module.exports.setDefaultUrl = setDefaultUrl;
