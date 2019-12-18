@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const chalk = require('chalk');
-const urlSetup = require('../../api/controllers/url-setup');
+const urlSetup = require('../../api/services/url-setup');
 
 
 describe('getWebUrl', function(){

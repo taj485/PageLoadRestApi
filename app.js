@@ -1,13 +1,13 @@
 
 const morgan = require('morgan');
-const pageSpeedRoutes = require('./api/routes/page-speed')
+const webInfoRoutes = require('./api/routes/web-info-router')
 const express = require('express');
 const app = express();
 
 // app.use() middlewear
 app.use(morgan('tiny'));
 
-app.use('/pagespeed', pageSpeedRoutes)
+app.use('/webinfo', webInfoRoutes)
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
