@@ -16,9 +16,9 @@ function getWebUrl(params){
 
 function setDefaultUrl(){
     const websites = {
-        websites1: "www.hotel-internet-marketing.com/",
-        websites2: "www.bbc.co.uk/",
-        websites3: "www.google.co.uk/"
+        website1: "www.hotel-internet-marketing.com/",
+        website2: "www.bbc.co.uk/",
+        website3: "www.google.co.uk/"
     }
     return websites;
 }
