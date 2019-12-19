@@ -1,6 +1,6 @@
 ## Compare load scores between websites
 
- Returns json data about response score provided by lighthouse on load times for each website. 
+ # Returns json data on performace score based on the load times of each website. The score is collected by Lighthouse.
 
 You can enter a maximum of 3 websites.
 
@@ -25,8 +25,6 @@ If no specefic url is given, it will load the scores for default url that is set
     Default Response:
     /webinfo
 
-        Code: 200
-        Content:
         [
             {
                 "title": "Speed Index",
@@ -48,12 +46,9 @@ If no specefic url is given, it will load the scores for default url that is set
             }
         ]
 
-
     Success Response:
     /webinfo/www.google.com
 
-        Code: 200
-        Content: 
         [
             {
             "title": "Speed Index",
@@ -66,7 +61,7 @@ If no specefic url is given, it will load the scores for default url that is set
 
     Error Response:
     /webinfo/www.unkownsite7878.com
-        Code: 500
+
         [
             {
                 "message": "Url not found",
