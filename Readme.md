@@ -1,30 +1,56 @@
-Compare load times between websites
+## Compare load scores between websites
 
-Returns json data about response score provided by lighthouse on load times for each website. 
+ Returns json data about response score provided by lighthouse on load times for each website. 
 
 You can enter a maximum of 3 websites.
+
+    URL:
+
+    </webinfo/:website1?/:website2?/:website3?>
 
     Example:
     
     /webinfo/www.google.com/www.facebook.com/www.youtube.com
 
-If no specefic url is given, it will test the default url set.
+Will not accept url that starts with https://
 
-    Example:
+    Wont accept: https://www.google.com
+
+    Will accept: www.google.com
+
+Method: GET 
+
+If no specefic url is given, it will load the scores for default url that is set. 
+
+    Default Response:
     /webinfo
 
+        Code: 200
+        Content:
+        [
+            {
+                "title": "Speed Index",
+                "response_code": 200,
+                "speed_score": 1,
+                "url": "https://www.google.co.uk/"
+            },
+            {
+                "title": "Speed Index",
+                "response_code": 200,
+                "speed_score": 0.96,
+                "url": "https://www.hotel-internet-marketing.com/"
+            },
+            {
+                "title": "Speed Index",
+                "response_code": 200,
+                "speed_score": 0.63,
+                "url": "https://www.bbc.co.uk/"
+            }
+        ]
 
-    URL
-
-    </webinfo/:website1?/:website2?/:website3?>
-
-    Method:
-
-    <Get>
-
-    GET 
 
     Success Response:
+    /webinfo/www.google.com
 
         Code: 200
         Content: 
@@ -39,7 +65,7 @@ If no specefic url is given, it will test the default url set.
 
 
     Error Response:
-    
+    /webinfo/www.unkownsite7878.com
         Code: 500
         [
             {
@@ -49,7 +75,6 @@ If no specefic url is given, it will test the default url set.
         ]
 
     Sample Call:
-
 
     Heroku:
     curl https://webhouse.herokuapp.com/webinfo/www.google.com/www.facebook.com/www.youtube.com
