@@ -1,6 +1,6 @@
-## Compare load scores between websites
+# Compare load scores between websites
 
- # Returns json data on performace score based on the load times of each website. The score is collected by Lighthouse.
+ ## Returns json data on performace score based on the load times of each website. The score is collected by Lighthouse.
 
 You can enter a maximum of 3 websites.
 
