@@ -42,16 +42,16 @@ async function pageSpeedApiAsync(api_url) {
                 .then(json => {
                     if ('error' in json) {
                         pageSpeedInfo = {
-                            Message: "Url not found",
-                            Response_code: json['error'].code,
+                            message: "Url not found",
+                            response_code: json['error'].code,
                             url: api_url[key]
                         };
                     } else {
                         pageSpeedInfo = {
-                            Title: json['lighthouseResult']['audits']['speed-index'].title,
-                            Response_code: status,
+                            title: json['lighthouseResult']['audits']['speed-index'].title,
+                            response_code: status,
                             speed_score: json['lighthouseResult']['audits']['speed-index'].score,
-                            URL: json.id
+                            url: json.id
                         };
                     };
                 });
