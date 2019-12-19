@@ -80,6 +80,3 @@ If no specefic url is given, it will load the scores for default url that is set
     Heroku:
     curl https://webhouse.herokuapp.com/webinfo/www.google.com/www.facebook.com/www.youtube.com
 
-    localhost:
-    curl http://localhost:xxxx/webinfo/www.google.com/www.facebook.com/www.youtube.com
-
