@@ -2,9 +2,15 @@
 
  ## Returns json data on performace score based on the load times of each website. The score is collected by Lighthouse.
 
+API is currently hosted on Heroku: https://webhouse.herokuapp.com/webinfo/
+
 You can enter a maximum of 3 websites.
 
     URL:
+
+    https://webhouse.herokuapp.com/
+
+    Parameters:
 
     </webinfo/:website1?/:website2?/:website3?>
 
