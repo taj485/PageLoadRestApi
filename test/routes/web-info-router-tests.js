@@ -1,16 +1,18 @@
-const assert = require('chai').assert;
-const expect = require('chai').expect;
-const request = require('supertest');
-const router = require('../../api/routes/web-info-router');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = require('../../app');
+const should = chai.should();
 
-describe('WebInfoRouter', function() {
-    it('can call api', function (){
-    request(router)
-        .get('/')
-        .expect('Content-Type', /xml/)
-        .expect(500, "ok")
-        .end(function(err, res){
-           if (err) throw err;
-        });
-    });
-});
+
+chai.use(chaiHttp)
+
+// describe('/webinfo', () => {
+//     it('it should get page load information from 3 default sites', (done) => {
+//       chai.request(server)
+//           .get('/webinfo')
+//           .end((err, res) => {
+//                 req.should.have.status(200);
+//             done();
+//           });
+//     });
+// });

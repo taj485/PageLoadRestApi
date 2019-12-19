@@ -12,7 +12,7 @@ describe('getWebUrl', function(){
 
         //act
         var websites = urlSetup.getWebUrl(website);
-        var result = websites.websites1;
+        var result = websites.website1;
         var actual =  "www.hotel-internet-marketing.com/";
 
         //assert
@@ -68,6 +68,34 @@ describe('setUpQuery', function(){
         var result = websites['website1'];
 
         var actual = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://www.google.com';
+
+        //assert
+        assert.equal(result,actual)
+    });
+})
+
+describe('ValidUrl', function(){
+    it('will return true if url is vlaid', function (){
+        //arrange
+        var website = 'www.google.com'
+
+        //act
+        var result = urlSetup.ValidUrl(website)
+
+        var actual = true;
+
+        //assert
+        assert.equal(result,actual)
+    });
+
+    it('will return false if url is not vlaid', function (){
+        //arrange
+        var website = '23335423'
+
+        //act
+        var result = urlSetup.ValidUrl(website)
+
+        var actual = false;
 
         //assert
         assert.equal(result,actual)
