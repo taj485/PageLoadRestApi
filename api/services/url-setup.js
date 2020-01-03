@@ -2,12 +2,14 @@ chalk = require('chalk');
 
 function getWebUrl(params) {
     var websites = {};
-    for (var url in params) {
-        if (params[url] != null) {
-            websites[url] = params[url];
+
+    for (let index = 1; index < params.length; index++) {
+        if (params[index] != null) {
+            websites[index] = params[index];
         }
     }
-    if (websites[Object.keys(websites)[0]] == null) {
+
+    if (websites[Object.keys(websites)[1]] == null) {
         websites = setDefaultUrl();
     }
     return websites;
@@ -15,9 +17,9 @@ function getWebUrl(params) {
 
 function setDefaultUrl() {
     const websites = {
-        website1: "www.hotel-internet-marketing.com/",
-        website2: "www.bbc.co.uk/",
-        website3: "www.google.co.uk/"
+        '1': "www.hotel-internet-marketing.com/",
+        '2': "www.bbc.co.uk/",
+        '3': "www.google.co.uk/"
     }
     return websites;
 }
@@ -29,7 +31,6 @@ function setUpQuery(websites) {
     for (key in websites) {
         if (ValidUrl(websites[key])) {
             api_url[key] = api + `?url=https://${websites[key]}`
-            console.log(api_url[key]);
         };
     };
     return api_url;
