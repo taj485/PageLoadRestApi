@@ -1,37 +1,45 @@
 chalk = require('chalk');
 
 function getWebUrl(params) {
-    var websites = {};
-    for (var url in params) {
-        if (params[url] != null) {
-            websites[url] = params[url];
+    var websites = [];
+
+    for (let index = 1; index < params.length; index++) {
+        if (params[index] != "") {
+            websites.push(params[index]);
         }
     }
-    if (websites[Object.keys(websites)[0]] == null) {
+
+    if (websites.length == 0) {
         websites = setDefaultUrl();
     }
     return websites;
 }
 
 function setDefaultUrl() {
-    const websites = {
-        website1: "www.hotel-internet-marketing.com/",
-        website2: "www.bbc.co.uk/",
-        website3: "www.google.co.uk/"
+    var websites = [];
+    const DefaultUrl = [
+        "www.hotel-internet-marketing.com/",
+        "www.bbc.co.uk/",
+        "www.google.co.uk/"
+    ];
+
+    for (let index = 0; index < DefaultUrl.length; index++) {
+        websites.push(DefaultUrl[index]);
     }
-    return websites;
+    return websites
 }
 
 function setUpQuery(websites) {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
 
-    const api_url = {};
-    for (key in websites) {
-        if (ValidUrl(websites[key])) {
-            api_url[key] = api + `?url=https://${websites[key]}`
-            console.log(api_url[key]);
+    const api_url = [];
+
+    websites.forEach(url => {
+        if (ValidUrl(url)) {
+            api_url.push(api + `?url=https://${url}`)
         };
-    };
+    });
+
     return api_url;
 }
 
