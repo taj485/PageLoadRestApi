@@ -1,4 +1,4 @@
-# Api to comapre load times of multiple websites. 
+# Api to compare load times of multiple websites. 
 
  ## Returns json data on performace score based on the load times of each website. The score is collected by Lighthouse.
 
